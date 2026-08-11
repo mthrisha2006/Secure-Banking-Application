@@ -34,6 +34,11 @@ public class Bank {
         if (!accounts.containsKey(id))
             throw new AccountNotFoundException("Account Not Found");
 
+        if (amount <= 0) {
+    System.out.println("Invalid Deposit Amount");
+    return;
+}
+
         Account a = accounts.get(id);
 
         if (amount > a.getBalance())
