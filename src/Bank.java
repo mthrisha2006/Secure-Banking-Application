@@ -50,14 +50,15 @@ public class Bank {
     }
 
     public void checkBalance(int id)
-            throws AccountNotFoundException {
+        throws AccountNotFoundException {
 
-        if (!accounts.containsKey(id))
-            throw new AccountNotFoundException("Account Not Found");
+    if (!accounts.containsKey(id))
+        throw new AccountNotFoundException("Account Not Found");
 
-        System.out.println("Balance : " + accounts.get(id).getBalance());
-    }
+    double balance = accounts.get(id).getBalance();
 
+    System.out.println("Current Balance : " + balance);
+}
     public void closeAccount(int id)
             throws AccountNotFoundException {
 
