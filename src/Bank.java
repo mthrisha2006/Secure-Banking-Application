@@ -66,8 +66,7 @@ public class Bank {
             throw new AccountNotFoundException("Account Not Found");
 
         accounts.remove(id);
-
-        System.out.println("Account Closed");
+        System.out.println("Account " + id + " Closed Successfully");
 
     }
 }
