@@ -6,10 +6,15 @@ public class Bank {
 
     public void createAccount(int id, String name, double balance) {
 
-        accounts.put(id, new Account(id, name, balance));
-
-        System.out.println("Account Created Successfully");
+    if (accounts.containsKey(id)) {
+        System.out.println("Account ID Already Exists");
+        return;
     }
+
+    accounts.put(id, new Account(id, name, balance));
+
+    System.out.println("Account Created Successfully");
+}
 
     public void deposit(int id, double amount)
             throws AccountNotFoundException {
