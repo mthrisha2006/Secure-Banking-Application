@@ -10,6 +10,10 @@ public class Bank {
         System.out.println("Account ID Already Exists");
         return;
     }
+    if (balance < 0) {
+    System.out.println("Invalid Initial Balance");
+    return;
+}
 
     accounts.put(id, new Account(id, name, balance));
 
