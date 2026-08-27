@@ -10,6 +10,10 @@ public class Bank {
         System.out.println("Account ID Already Exists");
         return;
     }
+    if (name == null || name.trim().isEmpty()) {
+    System.out.println("Invalid Account Name");
+    return;
+}
     if (balance < 0) {
     System.out.println("Invalid Initial Balance");
     return;
