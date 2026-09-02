@@ -5,6 +5,10 @@ public class Bank {
     HashMap<Integer, Account> accounts = new HashMap<>();
 
     public void createAccount(int id, String name, double balance) {
+        if (id <= 0) {
+    System.out.println("Invalid Account ID");
+    return;
+}
 
     if (accounts.containsKey(id)) {
         System.out.println("Account ID Already Exists");
