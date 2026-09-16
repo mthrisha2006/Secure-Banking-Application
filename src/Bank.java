@@ -30,7 +30,11 @@ public class Bank {
 
     public void deposit(int id, double amount)
             throws AccountNotFoundException {
-
+        if (id <= 0) {
+        System.out.println("Invalid Account ID");
+        return;
+    }
+    
         if (!accounts.containsKey(id))
             throw new AccountNotFoundException("Account Not Found");
         if (amount <= 0) {
@@ -47,13 +51,17 @@ public class Bank {
     public void withdraw(int id, double amount)
             throws AccountNotFoundException,
             InsufficientFundsException {
-
+        if (id <= 0) {
+    System.out.println("Invalid Account ID");
+    return;
+}
         if (!accounts.containsKey(id))
             throw new AccountNotFoundException("Account Not Found");
 
-        if (amount <= 0) {
-    System.out.println("Invalid Deposit Amount");
+       if (amount <= 0) {
+    System.out.println("Invalid Withdrawal Amount");
     return;
+
 }
 
         Account a = accounts.get(id);
@@ -68,7 +76,10 @@ public class Bank {
 
     public void checkBalance(int id)
         throws AccountNotFoundException {
-
+    if (id <= 0) {
+    System.out.println("Invalid Account ID");
+    return;
+}
     if (!accounts.containsKey(id))
         throw new AccountNotFoundException("Account Not Found");
 
@@ -78,7 +89,10 @@ public class Bank {
 }
     public void closeAccount(int id)
             throws AccountNotFoundException {
-
+        if (id <= 0) {
+    System.out.println("Invalid Account ID");
+    return;
+}
         if (!accounts.containsKey(id))
             throw new AccountNotFoundException("Account Not Found");
 
