@@ -18,7 +18,8 @@ public class BankConsoleApp {
             System.out.println("3.Withdraw");
             System.out.println("4.Check Balance");
             System.out.println("5.Close Account");
-            System.out.println("6.Exit");
+            System.out.println("6. Account Details");
+            System.out.println("7.Exit");
 
             System.out.print("Enter Choice : ");
             choice = sc.nextInt();
@@ -85,12 +86,19 @@ public class BankConsoleApp {
                         bank.closeAccount(id);
 
                         break;
-
                     case 6:
 
-                        System.out.println("Thank You");
+    System.out.print("Enter Account ID : ");
+    id = sc.nextInt();
 
-                        break;
+    bank.accountDetails(id);
+
+    break;
+    case 7:
+
+    System.out.println("Thank You");
+
+    break;
 
                     default:
 
@@ -103,7 +111,7 @@ public class BankConsoleApp {
 
             }
 
-        } while (choice != 6);
+        } while (choice != 7);
 
         sc.close();
     }

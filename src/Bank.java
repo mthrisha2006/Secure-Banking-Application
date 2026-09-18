@@ -17,6 +17,7 @@ public class Bank {
     if (name == null || name.trim().isEmpty()) {
     System.out.println("Invalid Account Name");
     return;
+    name = name.trim();
 }
     if (balance < 0) {
     System.out.println("Invalid Initial Balance");
@@ -100,4 +101,21 @@ public class Bank {
         System.out.println("Account " + id + " Closed Successfully");
 
     }
+    public void accountDetails(int id)
+        throws AccountNotFoundException {
+
+    if (id <= 0) {
+        System.out.println("Invalid Account ID");
+        return;
+    }
+
+    if (!accounts.containsKey(id))
+        throw new AccountNotFoundException("Account Not Found");
+
+    Account a = accounts.get(id);
+
+    System.out.println("Account ID : " + a.getId());
+    System.out.println("Name       : " + a.getCustomerName());
+    System.out.println("Balance    : " + a.getBalance());
+}
 }
