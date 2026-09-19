@@ -13,13 +13,14 @@ public class BankConsoleApp {
         do {
 
             System.out.println("\n===== SecureBank =====");
-            System.out.println("1.Create Account");
-            System.out.println("2.Deposit");
-            System.out.println("3.Withdraw");
-            System.out.println("4.Check Balance");
-            System.out.println("5.Close Account");
+            System.out.println("1. Create Account");
+            System.out.println("2. Deposit");
+            System.out.println("3. Withdraw");
+            System.out.println("4. Check Balance");
+            System.out.println("5. Close Account");
             System.out.println("6. Account Details");
-            System.out.println("7.Exit");
+            System.out.println("7. View All Accounts");
+            System.out.println("8. Exit");
 
             System.out.print("Enter Choice : ");
             choice = sc.nextInt();
@@ -86,19 +87,27 @@ public class BankConsoleApp {
                         bank.closeAccount(id);
 
                         break;
+
                     case 6:
 
-    System.out.print("Enter Account ID : ");
-    id = sc.nextInt();
+                        System.out.print("Enter Account ID : ");
+                        id = sc.nextInt();
 
-    bank.accountDetails(id);
+                        bank.accountDetails(id);
 
-    break;
-    case 7:
+                        break;
 
-    System.out.println("Thank You");
+                    case 7:
 
-    break;
+                        bank.viewAllAccounts();
+
+                        break;
+
+                    case 8:
+
+                        System.out.println("Thank You");
+
+                        break;
 
                     default:
 
@@ -111,7 +120,7 @@ public class BankConsoleApp {
 
             }
 
-        } while (choice != 7);
+        } while (choice != 8);
 
         sc.close();
     }
